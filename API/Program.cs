@@ -1,7 +1,8 @@
-
-
+using Infrastructure;
 using Domain.Moduls;
+using Infrastructure.Database;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 
 namespace API
 {
@@ -17,7 +18,10 @@ namespace API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            
+
+            //DatabasSetUp
+            builder.Services.AddInfrastructureServices(builder.Configuration);
+
             //HashPassword
             builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
