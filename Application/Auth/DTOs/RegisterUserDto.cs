@@ -1,6 +1,6 @@
 ﻿namespace Application.Dto;
 
-public class UserDto
+public class RegisterUserDto
 {
     public string Email { get; set; } = string.Empty;
     public string UserName { get; set; } = string.Empty;
